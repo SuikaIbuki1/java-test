@@ -1,0 +1,13 @@
+GRAPHQL http://localhost:8080/graphql
+Authorization: 123
+
+query bookDetails {
+    bookById(id: "1") {
+        id
+        name
+        author {
+            id
+            firstName
+        }
+    }
+}
