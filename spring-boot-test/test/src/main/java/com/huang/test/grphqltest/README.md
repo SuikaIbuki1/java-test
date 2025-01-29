@@ -74,7 +74,8 @@
    ```
    // BookController.java
    ```java
-   @Controller
+   @RestController
+   @RestController
    public class BookController {
    
        @QueryMapping("bookById")
