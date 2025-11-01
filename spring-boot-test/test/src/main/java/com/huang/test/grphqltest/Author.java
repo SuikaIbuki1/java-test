@@ -1,4 +1,4 @@
-package com.huang.test.grphqltest.domain;
+package com.huang.test.grphqltest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

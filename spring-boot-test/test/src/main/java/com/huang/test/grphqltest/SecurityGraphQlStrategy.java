@@ -1,8 +1,7 @@
-package com.huang.test.grphqltest.config;
+package com.huang.test.grphqltest;
 
 import graphql.ExecutionResult;
 import graphql.ExecutionResultImpl;
-import graphql.kickstart.execution.error.GenericGraphQLError;
 import org.springframework.graphql.server.WebGraphQlInterceptor;
 import org.springframework.graphql.server.WebGraphQlRequest;
 import org.springframework.graphql.server.WebGraphQlResponse;
@@ -24,10 +23,6 @@ public class SecurityGraphQlStrategy implements WebGraphQlInterceptor {
             }
         }
         if (!regine) {
-            ExecutionResult executionResult = ExecutionResultImpl.newExecutionResult()
-                    .data(null)
-                    .errors(List.of(new GenericGraphQLError("token is null")))
-                    .build();
             return Mono.error(new RuntimeException("token is null"));
         }
         return chain.next(request);

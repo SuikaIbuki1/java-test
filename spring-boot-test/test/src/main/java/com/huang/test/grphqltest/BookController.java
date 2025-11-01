@@ -1,16 +1,15 @@
-package com.huang.test.grphqltest.controller;
+package com.huang.test.grphqltest;
 
-import com.huang.test.grphqltest.domain.Author;
-import com.huang.test.grphqltest.domain.Book;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BookController {
 
-    @QueryMapping("bookById")
+    @QueryMapping
     public Book bookById(@Argument String id) {
         return Book.getById(id);
     }

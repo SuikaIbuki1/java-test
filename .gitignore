@@ -1,1 +1,4 @@
 spring-boot-test/test/
+target/
+.idea/
+java-test.iml
